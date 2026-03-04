@@ -1,1 +1,259 @@
-<h1>ANCHOR Project</h1>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="ANCHOR: Project Description Here.">
+    <meta name="keywords" content="ANCHOR, Robotics, AI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ANCHOR</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title"><span class="textsc">ANCHOR</span>: A Physically
+                            Grounded Closed-Loop Framework for Robust Home-Service Mobile Manipulation</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Anonymous Authors</a></span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Anonymous Affiliation</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Paper Link. -->
+                                <span class="link-block">
+                                    <a href="./static/main.pdf"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code (Coming Soon)</span>
+                                    </a>
+                                </span>
+                                <!-- Video Link. -->
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <div class="publication-banner">
+                    <img src="./static/images/fighead.png" alt="ANCHOR Teaser Image">
+                    <h2 class="subtitle has-text-centered teaser-caption">
+                        Comparison between a conventional open-loop pipeline and <strong>ANCHOR</strong> on two
+                        representative failure modes.
+                        <strong>Top row</strong>: without operability-aware alignment, the robot navigates to a
+                        geometrically reachable but kinematically infeasible pose; <strong>ANCHOR</strong> actively
+                        repositions the base into the operable region.
+                        <strong>Bottom row</strong>: under external disturbances, <strong>ANCHOR</strong> re-anchors the
+                        world state, detects the displaced object, and replans to complete the task.
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Open-vocabulary mobile manipulation in real domestic environments requires reliable
+                            long-horizon execution under open-set object references and frequent disturbances. In
+                            practice, many failures arise not from semantic misunderstanding, but from inconsistency
+                            between symbolic plans and the evolving physical world.
+                            To address this execution inconsistency, we present <strong>ANCHOR</strong>, a physically
+                            grounded closed-loop framework that aligns symbolic reasoning with verifiable physical state
+                            during execution. <strong>ANCHOR</strong> integrates three mechanisms: (i) physically
+                            anchored task planning, (ii) operability-aware base alignment, and (iii)
+                            minimum-responsible-layer hierarchical recovery. Across 60 real-robot trials,
+                            <strong>ANCHOR</strong> improves task success from 53.3% to 71.7% and achieves a 71.4%
+                            recovery rate under perturbations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Method Overview</h2>
+                    <div class="content has-text-justified">
+                        <img src="./static/images/figoverview.png" class="method-figure" alt="ANCHOR Method Overview">
+                        <p>
+                            <strong>ANCHOR</strong> emphasizes deployability and robustness via continual state
+                            re-anchoring. Rather than deferring feasibility checks to execution, <strong>ANCHOR</strong>
+                            couples perception, planning, and control throughout the task.
+                        </p>
+                        <ul>
+                            <li><strong>Physically Anchored Task Planning (PATP):</strong> Derives symbolic states from
+                                real-time sensor observations and re-evaluates them after each action.</li>
+                            <li><strong>Operability-Aware Base Alignment:</strong> Refines navigation endpoints using
+                                manipulator reachability and local collision constraints.</li>
+                            <li><strong>Minimum-Responsible-Layer Recovery:</strong> Attributes failures across
+                                perception, base-arm coordination, and execution, escalating only when necessary.</li>
+                        </ul>
+
+                        <h3 class="title is-4">Physically Anchored Task Planning</h3>
+                        <img src="./static/images/figpddl.png" class="method-figure"
+                            alt="Physically Anchored Task Planning">
+                        <p>
+                            The PATP pipeline enforces a state-consistency contract: every symbolic predicate must be
+                            backed by directly observable, verifiable geometric evidence at execution time. The system
+                            restricts the LLM to generating a well-formed PDDL problem skeleton, while all
+                            geometry-related constraints and predicate evaluations are handled by lightweight sensing
+                            modules.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Video. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Overview Video</h2>
+                    <div class="overview-video">
+                        <video id="overview-video" controls playsinline height="100%">
+                            <source src="./static/videos/overview.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Videos Grid. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Demos</h2>
+                    <div class="video-grid">
+                        <video id="demo1" autoplay muted loop playsinline height="100%">
+                            <source src="./static/videos/demo1.mp4" type="video/mp4">
+                        </video>
+                        <video id="demo2" autoplay muted loop playsinline height="100%">
+                            <source src="./static/videos/demo2.mp4" type="video/mp4">
+                        </video>
+                        <video id="demo3" autoplay muted loop playsinline height="100%">
+                            <source src="./static/videos/demo3.mp4" type="video/mp4">
+                        </video>
+                        <video id="demo4" autoplay muted loop playsinline height="100%">
+                            <source src="./static/videos/demo4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualitative Results -->
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Qualitative Results</h2>
+                    <div class="content has-text-justified">
+                        <img src="./static/images/experiment.png" class="method-figure" alt="Qualitative Results">
+                        <p>
+                            Qualitative real-robot trial illustrating closed-loop recovery and operability-aware
+                            alignment.
+                            (1) Target search; (2) Base alignment ensures manipulation feasibility; (3) L1 recovery
+                            triggers local re-grasp after an initial failure; (4-5) Successful placement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BibTeX Section -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre class="bibtex-box"><code>@article{anonymous2025anchor,
+  title={ANCHOR: A Physically Grounded Closed-Loop Framework for Robust Home-Service Mobile Manipulation},
+  author={Anonymous Authors},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2025}
+}</code></pre>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+                        <p>
+                            This website is licensed under a <a rel="license"
+                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                Commons Attribution-ShareAlike 4.0 International License</a>.
+                        </p>
+                        <p>
+                            Website template adapted from <a
+                                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+                            We thank the authors for sharing the source code.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
