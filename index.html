@@ -60,7 +60,7 @@
                                 </span>
                                 <!-- Video Link. -->
                                 <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                    <a href="#overview-video-section" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon">
                                             <i class="fab fa-youtube"></i>
                                         </span>
@@ -80,6 +80,7 @@
         <div class="container is-max-desktop">
             <div class="hero-body">
                 <div class="publication-banner">
+                    <h2 class="title is-3">Method Improvements Overview</h2>
                     <img src="./static/images/fighead.png" alt="ANCHOR Teaser Image">
                     <h2 class="subtitle has-text-centered teaser-caption">
                         Comparison between a conventional open-loop pipeline and <strong>ANCHOR</strong> on two
@@ -126,7 +127,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3">Method Overview</h2>
+                    <h2 class="title is-3">Framework</h2>
                     <div class="content has-text-justified">
                         <img src="./static/images/figoverview.png" class="method-figure" alt="ANCHOR Method Overview">
                         <p>
@@ -164,7 +165,7 @@
         <div class="container is-max-desktop">
             <div class="columns is-centered has-text-centered">
                 <div class="column is-four-fifths">
-                    <h2 class="title is-3">Overview Video</h2>
+                    <h2 class="title is-3" id="overview-video-section">Overview Video</h2>
                     <div class="overview-video">
                         <video id="overview-video" controls playsinline height="100%">
                             <source src="./static/videos/overview.mp4" type="video/mp4">
@@ -182,18 +183,30 @@
                 <div class="column is-four-fifths">
                     <h2 class="title is-3">Demos</h2>
                     <div class="video-grid">
-                        <video id="demo1" autoplay muted loop playsinline height="100%">
-                            <source src="./static/videos/demo1.mp4" type="video/mp4">
-                        </video>
-                        <video id="demo2" autoplay muted loop playsinline height="100%">
-                            <source src="./static/videos/demo2.mp4" type="video/mp4">
-                        </video>
-                        <video id="demo3" autoplay muted loop playsinline height="100%">
-                            <source src="./static/videos/demo3.mp4" type="video/mp4">
-                        </video>
-                        <video id="demo4" autoplay muted loop playsinline height="100%">
-                            <source src="./static/videos/demo4.mp4" type="video/mp4">
-                        </video>
+                        <div class="video-item">
+                            <video id="demo1" autoplay muted loop playsinline height="100%">
+                                <source src="./static/videos/demo1.mp4" type="video/mp4">
+                            </video>
+                            <p class="video-caption">Demo 1: In-place grasp and place.</p>
+                        </div>
+                        <div class="video-item">
+                            <video id="demo2" autoplay muted loop playsinline height="100%">
+                                <source src="./static/videos/demo2.mp4" type="video/mp4">
+                            </video>
+                            <p class="video-caption">Demo 2: Task execution with navigation.</p>
+                        </div>
+                        <div class="video-item">
+                            <video id="demo3" autoplay muted loop playsinline height="100%">
+                                <source src="./static/videos/demo3.mp4" type="video/mp4">
+                            </video>
+                            <p class="video-caption">Demo 3: Object is disturbed but remains in view; the system recovers and completes the task.</p>
+                        </div>
+                        <div class="video-item">
+                            <video id="demo4" autoplay muted loop playsinline height="100%">
+                                <source src="./static/videos/demo4.mp4" type="video/mp4">
+                            </video>
+                            <p class="video-caption">Demo 4: Object is moved out of view; the system re-searches, retrieves it, and then places it.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -220,7 +233,7 @@
         </div>
     </section>
 
-    <!-- BibTeX Section -->
+    <!-- BibTeX Section
     <section class="section" id="BibTeX">
         <div class="container is-max-desktop content">
             <h2 class="title">BibTeX</h2>
@@ -232,6 +245,7 @@
 }</code></pre>
         </div>
     </section>
+    -->
 
     <footer class="footer">
         <div class="container">
